@@ -20,3 +20,11 @@ class BlogSerializer(serializers.ModelSerializer):
         fields = ["id", "title", "content", "created_at", "author"]
         extra_kwargs = {"author": {"read_only": True}}
 
+    def update(self, instance, validated_data):
+        try:
+            instance.title = validated_data.get('title', instance.title)
+            instance.content = validated_data.get('content', instance.content)
+            instance.save()
+            return instance
+        except Exception as e:
+            raise serializers.ValidationError({"error": str(e)})
