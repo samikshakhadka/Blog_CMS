@@ -35,8 +35,3 @@ This documentation provides an overview of a simple web application for managing
    - Users need to authenticate (login) before performing any CRUD operations.
    - Unauthorized users are redirected to the login page.
 
-## Installation
-### Frontend (React)
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/blog-app.git
